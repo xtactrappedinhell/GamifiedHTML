@@ -1,0 +1,24 @@
+Quest System:
+-Read X articles.
+-Complete this profile
+-Invite a friend to experience it
+
+Find the Item:
+-Need to find the item
+
+---------------------------------------------------------------------- 
+
+ArtifactMaker:
+-Use various materials to build internet artifacts (memes, tecnologies)
+-Different activities unlock either materials or fragments to create new artifacts.
+-When completed these artifacts are displayed in your profile.
+
+Find the Exotic:
+-Find strange websites
+-Rate them all
+
+---------------------------------------------------------------------- 
+
+Code Crate
+-Can open a certain number of crates per day
+-Can get: Badges, Xp, profile customizations
