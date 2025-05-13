@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<link rel="stylesheet" href="styles.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meme Lootbox</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Collection</title>
 </head>
 <body>
     <nav class="navbar">
@@ -23,16 +23,17 @@
     </nav>
     <div id="starfield"></div>
     <main class="main">
-        <div id="title">
-            <h1>Meme Lootbox</h1>
-        </div>
-        <div id="description">
-            <p>This is where you come waste your sanity.</p>
-            <p>Here you can pull crates and collect memes.</p>
-            <p>Click the button below to pull a crate.</p>
-        </div>
-        <div id="pullbutton">
-            <button id="pull"><span>Pull Now</span></button>
+        <h1>Collection</h1>
+        <h2 id="pagecounter"></h2>
+        <div id="gridcollection">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
     </main>
     <footer>
@@ -40,18 +41,18 @@
     </footer>
 </body>
 </html>
-<script src="js\clock.js"></script>
-<script src="js\crate.js"></script>
+<script src="js/clock.js"></script>
+<script src="js/collection.js"></script>
 
 <script>
-const stars = 100;
+const stars = 200;
 const starfield = document.getElementById('starfield');
 
 for (let i = 0; i < stars; i++) {
     const star = document.createElement('div');
     star.classList.add('star');
     
-    const size = Math.random() * 2 + 2; 
+    const size = Math.random() * 2 + 1; 
     const top = Math.random() * 100; 
     const left = Math.random() * 100;
     const duration = Math.random() * 5 + 2;

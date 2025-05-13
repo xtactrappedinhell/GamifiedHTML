@@ -4,7 +4,9 @@ class Time //Constructor of Time Class
 {
     constructor()
     {
-        this.updatetime();
+        this.updatetime = this.updatetime.bind(this) //Binding the function to the class
+        this.updatetime
+        setInterval(this.updatetime, 1000);
     }
 
     updatetime(){
@@ -32,9 +34,8 @@ class Time //Constructor of Time Class
     }
 }
 
-const clock = new Time();
+new Time();
 
-setInterval(clock.updatetime, 1000);
 
 
 
