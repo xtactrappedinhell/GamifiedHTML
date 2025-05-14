@@ -30,11 +30,6 @@ body{
     border-bottom: 1px solid #333333;
 }
 
-.logo {
-    font-weight: bold;
-    font-size: 1.5rem;
-}
-
 .clock{
     font-size: 1rem;
     opacity: 0.5;
@@ -58,7 +53,7 @@ body{
 }
 
 .main h1{
-    font-family: 'Uncial Antiqua', serif;
+    font-family: 'Inter', sans-serif;
     font-size: 3rem;
     margin-bottom: 1rem;
 }
@@ -89,9 +84,9 @@ body{
     color: #cccccc;
 }
 
-#pull{
-    background: linear-gradient(135deg, #00ffe1, #00c7b8);
-    font-family: 'Uncial Antiqua', serif;
+.pull{
+    background: linear-gradient(135deg, #f1f1f1f1, #727272);
+    font-family: 'Inter', sans-serif;
     color: #121212;
     border: none;
     padding: 1rem 2rem;
@@ -99,12 +94,13 @@ body{
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.5s ease;
-    box-shadow: 0 0 10px #00ffe1, 0 0 15px #00c7b888 /*88% of opacity to the color */;
+    box-shadow: 0 0 10px #ffffff, 0 0 15px #00000088 /*88% of opacity to the color */;
     position: relative;
     overflow: hidden;
 }
 
-#pull::before {
+
+.pull::before {
     content: '';
     position: absolute;
     top: -50%;
@@ -117,9 +113,52 @@ body{
     pointer-events: none;
 }
 
-#pull:hover{
+.pull:hover{
     transform: scale(1.05);
-    box-shadow: 0 0 15px #00ffe1cc, 0 0 30px #5f00ffcc, inset 0 0 15px #ffffff33;
+    box-shadow: 0 0 15px #b9fff7cc, 0 0 30px #ff7070cc, inset 0 0 15px #ffffff33;
+}
+
+#cratesection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem;
+}
+
+.meme{
+    background-color: #1e1e1e;
+    border: 2px solid #333;
+    border-radius: 16px;
+    padding: 1rem;
+    margin: 1rem;
+    max-width: 420px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease;
+    vertical-align: top;
+}
+
+.meme:hover {
+    transform: scale(0.9);
+}
+
+.meme img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 0 5px #00000066;
+}
+
+.meme p{
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
 }
 
 footer{
@@ -128,6 +167,15 @@ footer{
     padding: 1rem;
     font-size: 0.9rem;
     color: #777777;
+}
+
+/* Second Page */
+
+#pullbuttons
+{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
 }
 
 /* Animations */
