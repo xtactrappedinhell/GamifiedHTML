@@ -126,6 +126,39 @@ body{
     margin: 2rem;
 }
 
+#gridcollection{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.memedisplay {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #888;
+    border-radius: 2px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.5s ease;
+}
+
+.memedisplay:hover {
+    transform: scale(1.05);
+}
+
+.memedisplay img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.memedisplay p {
+    margin: 0.5rem;
+    color: white;
+    font-size: 0.9rem;
+}
+
 .meme{
     background-color: #1e1e1e;
     border: 2px solid #333;

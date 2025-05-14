@@ -6,28 +6,34 @@ class Crate
         this.possiblememes = [];
     }
 
-        async loadMemes() 
+        async loadMemes() /* Loads the meme info in asyncrony with the local server */
         {
         try {
+
             const serverresponse = await fetch("memes.json");
             this.possiblememes = await serverresponse.json();
+
         } catch (error) {
-            if (this.possiblememes.length === 0) 
-            {
-                const cratecontainer = document.getElementById("cratesection");
-                cratecontainer.innerHTML = '<div class="crate">No memes loaded!</div>';
-                return;
-            }
+
+            console.log(error)
+            return;
         }  
         return;
     }   
 
     opencrate(amount = 1) {
-    const pulled = [];
+    const pulled = []; /* map of pulled memes */
+
         for (let i = 0; i < amount; i++) 
         {
-            const randommeme = this.possiblememes[Math.floor(Math.random() * this.possiblememes.length)];
+            const randommeme = this.possiblememes[Math.floor(Math.random() * this.possiblememes.length)]; /* Returns always a full integer */
             pulled.push(randommeme);
+
+            const pulledmemes = JSON.parse(localStorage.getItem("mymemes")); /*Saves the memes into the temporary storage of the browser !<--- To Check --->!*/
+            if (!pulledmemes.some(m => m.name === randommeme.name)){  /*checks if the item name already exists in the collection */
+                pulledmemes.push(randommeme);
+                localStorage.setItem("mymemes", JSON.stringify(pulledmemes));
+            }
         }
 
         const cratecontainer = document.getElementById("cratesection");
@@ -38,9 +44,9 @@ class Crate
 const crate = new Crate();
 
 window.addEventListener("DOMContentLoaded", async () => {
-    await crate.loadMemes(); 
+    await crate.loadMemes(); /*The server waits for the memes to load or fail before adding the listeners to the buttons */
 
-    const crateBox = document.querySelector(".crate");
+    const crateBox = document.querySelector(".crate"); 
 
     if (crateBox) {
         crateBox.addEventListener("click", () => crate.opencrate(1)); /* Only when the crate is created the event listener is added */
