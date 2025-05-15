@@ -22,6 +22,7 @@ class Crate
     }   
 
     opencrate(amount = 1) {
+    
     const pulled = []; /* map of pulled memes */
 
         for (let i = 0; i < amount; i++) 
@@ -29,8 +30,9 @@ class Crate
             const randommeme = this.possiblememes[Math.floor(Math.random() * this.possiblememes.length)]; /* Returns always a full integer */
             pulled.push(randommeme);
 
-            const pulledmemes = JSON.parse(localStorage.getItem("mymemes")); /*Saves the memes into the temporary storage of the browser !<--- To Check --->!*/
-            if (!pulledmemes.some(m => m.name === randommeme.name)){  /*checks if the item name already exists in the collection */
+            const pulledmemes = JSON.parse(localStorage.getItem("mymemes")) || []; /*Saves the memes into the temporary storage of the browser !<--- To Check --->!*/
+
+            if (!pulledmemes.some(nm => nm.name === randommeme.name)){  /*checks if the item name already exists in the collection */
                 pulledmemes.push(randommeme);
                 localStorage.setItem("mymemes", JSON.stringify(pulledmemes));
             }
@@ -38,6 +40,7 @@ class Crate
 
         const cratecontainer = document.getElementById("cratesection");
         cratecontainer.innerHTML = pulled.map(meme => `<div class="meme"><img src="${meme.image}" alt="${meme.name}" /><p>${meme.name}</p></div>`).join('');
+        
     }
 }
 
