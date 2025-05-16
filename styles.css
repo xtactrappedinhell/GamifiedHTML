@@ -47,6 +47,8 @@ body{
 
 .main{
     flex: 1;
+    justify-content: center;
+    align-content: center;
     text-align: center;
     padding: 2rem 1rem;
     padding: 2rem;
@@ -54,7 +56,7 @@ body{
 
 .main h1{
     font-family: 'Inter', sans-serif;
-    font-size: 3rem;
+    font-size: 7rem;
     margin-bottom: 1rem;
 }
 
@@ -79,7 +81,7 @@ body{
 /* First Page */
 
 #description{
-    font-size: 1rem;
+    font-size: 3rem;
     margin-bottom: 2rem;
     color: #cccccc;
 }
@@ -90,7 +92,7 @@ body{
     color: #121212;
     border: none;
     padding: 1rem 2rem;
-    font-size: 1rem;
+    font-size: 3rem;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.5s ease;
@@ -161,6 +163,17 @@ body{
     font-size: 0.9rem;
 }
 
+@keyframes appear{
+    from{
+        scale: 0.5;
+        opacity: 0;
+    }
+    to{
+        scale: 1;
+        opacity: 1;
+    }
+}
+
 .meme{
     background-color: #1e1e1e;
     border: 2px solid #333;
@@ -171,10 +184,11 @@ body{
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     transition: transform 0.4s ease;
     vertical-align: top;
+    animation: appear 0.5s ease;
 }
 
 .meme:hover {
-    transform: scale(0.9);
+    transform: scale(1.05);
 }
 
 .meme img {
